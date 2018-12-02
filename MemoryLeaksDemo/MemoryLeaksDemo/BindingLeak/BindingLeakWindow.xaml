@@ -1,0 +1,29 @@
+﻿<Window x:Class="MemoryLeaksDemo.BindingLeak.BindingLeakWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MemoryLeaksDemo.BindingLeak"
+        mc:Ignorable="d"
+        Title="BindingLeakWindow" Height="300" Width="300">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1"
+                    Margin="20"
+                    Orientation="Horizontal">
+            <TextBlock Text="Person's name: " />
+            <TextBox Text="{Binding PersonLeaky.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+
+        <Button Grid.Row="2"
+                Margin="20"
+                Content="Close"
+                Click="Button_Click" />
+    </Grid>
+</Window>
