@@ -2,9 +2,9 @@
 
 namespace MemoryLeaksDemo.BindingLeak
 {
-    public partial class BindingLeakWindow : Window
+    public partial class BindingLeakView : Window
     {
-        public BindingLeakWindow()
+        public BindingLeakView()
         {
             InitializeComponent();
             DataContext = new BindingLeakViewModel();

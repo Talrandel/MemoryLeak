@@ -77,12 +77,16 @@
     </ApplicationDefinition>
     <Compile Include="Infrastructure\HeavyObject.cs" />
     <Compile Include="Infrastructure\HeavyViewModel.cs" />
+    <Compile Include="Infrastructure\SharedResourceDictionary.cs" />
+    <Compile Include="MergedResourceDictionariesLeak\MergedResourceDictionariesLeakView.xaml.cs">
+      <DependentUpon>MergedResourceDictionariesLeakView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="xNameLeak\xNameLeakView.xaml.cs">
       <DependentUpon>xNameLeakView.xaml</DependentUpon>
     </Compile>
-    <Page Include="BindingLeak\BindingLeakWindow.xaml">
+    <Page Include="BindingLeak\BindingLeakView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,8 +99,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BindingLeak\BindingLeakViewModel.cs" />
-    <Compile Include="BindingLeak\BindingLeakWindow.xaml.cs">
-      <DependentUpon>BindingLeakWindow.xaml</DependentUpon>
+    <Compile Include="BindingLeak\BindingLeakView.xaml.cs">
+      <DependentUpon>BindingLeakView.xaml</DependentUpon>
     </Compile>
     <Compile Include="BindingLeak\PersonLeaky.cs" />
     <Compile Include="BindingLeak\PersonImmutable.cs" />
@@ -106,6 +110,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MergedResourceDictionariesLeak\MergedResourceDictionariesLeakView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DedaultStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="xNameLeak\xNameLeakView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

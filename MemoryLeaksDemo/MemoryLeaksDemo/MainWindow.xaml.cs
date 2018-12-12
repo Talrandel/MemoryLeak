@@ -14,7 +14,7 @@ namespace MemoryLeaksDemo
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            var w1 = new BindingLeakWindow();
+            var w1 = new BindingLeakView();
             w1.ShowDialog();
             TextBlockMemory.Text = GC.GetTotalMemory(true).ToString();
         }

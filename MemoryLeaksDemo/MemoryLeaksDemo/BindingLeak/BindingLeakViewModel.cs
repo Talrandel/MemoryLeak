@@ -15,7 +15,6 @@ namespace MemoryLeaksDemo.BindingLeak
             PersonLeaky = new PersonLeaky();
         }      
 
-        public PersonLeaky PersonLeaky { get; set; }
-        
+        public PersonLeaky PersonLeaky { get; set; }        
     }
 }

@@ -1,9 +1,9 @@
-﻿namespace MemoryLeaksDemo.BindingLeak
+﻿using MemoryLeaksDemo.Infrastructure;
+
+namespace MemoryLeaksDemo.BindingLeak
 {
-    class PersonLeaky
+    class PersonLeaky : HeavyObject
     {
         public string Name { get; set; }
-
-        public readonly byte[] Trash = new byte[50 * 1024 * 1024];
     }
 }
