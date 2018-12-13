@@ -1,13 +1,12 @@
-﻿<Window x:Class="MemoryLeaksDemo.xNameLeak.xNameLeakView"
+﻿<Window x:Class="MemoryLeaksDemo.CollectionBindingLeak.CollectionBindingLeakView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MemoryLeaksDemo.xNameLeak"
+        xmlns:local="clr-namespace:MemoryLeaksDemo.CollectionBindingLeak"
         mc:Ignorable="d"
-        Title="xNameLeakView" Height="300" Width="300">
+        Title="CollectionBindingLeakView" Height="300" Width="300">
     <Grid>
-        <Button x:Name="LeakyButton" 
-                Content="Very leaky button" />
+
     </Grid>
 </Window>

@@ -6,7 +6,7 @@ namespace MemoryLeaksDemo.xNameLeak
     /// <summary>
     /// Interaction logic for xNameLeakView.xaml
     /// </summary>
-    public partial class xNameLeakView : Window
+    public partial class xNameLeakView
     {
         public xNameLeakView()
         {

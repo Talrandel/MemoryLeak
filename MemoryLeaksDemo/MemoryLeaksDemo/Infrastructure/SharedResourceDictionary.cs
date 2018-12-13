@@ -7,17 +7,14 @@ namespace MemoryLeaksDemo.Infrastructure
     public class SharedResourceDictionary : ResourceDictionary
     {
         /// <summary>
-        /// Internal cache of loaded dictionaries 
+        /// Внутренний кэш загруженных словарей.
         /// </summary>
-        public static Dictionary<Uri, ResourceDictionary> _sharedDictionaries = new Dictionary<Uri, ResourceDictionary>();
-
-        /// <summary>
-        /// Local member of the source uri
-        /// </summary>
+        private static readonly Dictionary<Uri, ResourceDictionary> SHARED_DICTIONARIES = new Dictionary<Uri, ResourceDictionary>();
+        
         private Uri _sourceUri;
 
         /// <summary>
-        /// Gets or sets the uniform resource identifier (URI) to load resources from.
+        /// Исходный URI для загрузки ресурса.
         /// </summary>
         public new Uri Source
         {
@@ -26,19 +23,17 @@ namespace MemoryLeaksDemo.Infrastructure
             {
                 _sourceUri = value;
 
-                if (!_sharedDictionaries.ContainsKey(value))
+                if (!SHARED_DICTIONARIES.ContainsKey(value))
                 {
-                    // If the dictionary is not yet loaded, load it by setting
-                    // the source of the base class
+                    // Если словарь еще не загружен, то загрузить его, используя текущий URI и свойство Source базового класса
                     base.Source = value;
-
-                    // add it to the cache
-                    _sharedDictionaries.Add(value, this);
+                    // Добавить словарь в кэш
+                    SHARED_DICTIONARIES.Add(value, this);
                 }
                 else
                 {
-                    // If the dictionary is already loaded, get it from the cache
-                    MergedDictionaries.Add(_sharedDictionaries[value]);
+                    // Если словарь уже есть в кэше - загрузить из кэша
+                    MergedDictionaries.Add(SHARED_DICTIONARIES[value]);
                 }
             }
         }

@@ -18,7 +18,9 @@
                     Margin="20"
                     Orientation="Horizontal">
             <TextBlock Text="Person's name: " />
-            <TextBox Text="{Binding PersonLeaky.Name, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding Person.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <!--<TextBox Text="{Binding Person.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />-->
+            <!--<TextBox Text="{Binding Person.Name, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" />-->
         </StackPanel>
 
         <Button Grid.Row="2"

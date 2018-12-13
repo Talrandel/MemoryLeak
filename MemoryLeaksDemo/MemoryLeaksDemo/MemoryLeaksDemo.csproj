@@ -75,9 +75,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BindingLeak\PersonNormal.cs" />
+    <Compile Include="CollectionBindingLeak\CollectionBindingLeakView.xaml.cs">
+      <DependentUpon>CollectionBindingLeakView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CollectionBindingLeak\CollectionBindingLeakViewModel.cs" />
+    <Compile Include="CommandBindingLeak\CommandBindingLeakView.xaml.cs">
+      <DependentUpon>CommandBindingLeakView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataBindingLeak\DataBindingLeakView.xaml.cs">
+      <DependentUpon>DataBindingLeakView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Infrastructure\HeavyObject.cs" />
     <Compile Include="Infrastructure\HeavyViewModel.cs" />
     <Compile Include="Infrastructure\SharedResourceDictionary.cs" />
+    <Compile Include="MediaEffectLeak\MediaEffectLeakView.xaml.cs">
+      <DependentUpon>MediaEffectLeakView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MergedResourceDictionariesLeak\MergedResourceDictionariesLeakView.xaml.cs">
       <DependentUpon>MergedResourceDictionariesLeakView.xaml</DependentUpon>
     </Compile>
@@ -87,6 +101,18 @@
       <DependentUpon>xNameLeakView.xaml</DependentUpon>
     </Compile>
     <Page Include="BindingLeak\BindingLeakView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CollectionBindingLeak\CollectionBindingLeakView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommandBindingLeak\CommandBindingLeakView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataBindingLeak\DataBindingLeakView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,6 +136,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MediaEffectLeak\MediaEffectLeakView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MediaEffectLeak\MediaEffectResourceDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MergedResourceDictionariesLeak\MergedResourceDictionariesLeakView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -153,7 +187,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="EventHandlerLeak\" />
-    <Folder Include="MediaEffectLeak\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

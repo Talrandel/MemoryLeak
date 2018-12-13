@@ -1,10 +1,4 @@
 ﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace MemoryLeaksDemo.BindingLeak
 {
@@ -12,9 +6,13 @@ namespace MemoryLeaksDemo.BindingLeak
     {
         public BindingLeakViewModel()
         {
-            PersonLeaky = new PersonLeaky();
+            Person = new PersonLeaky();
+            //Person = new PersonImmutable();
+            //Person = new PersonNormal();
         }      
 
-        public PersonLeaky PersonLeaky { get; set; }        
+        public PersonLeaky Person { get; set; }
+        //public PersonImmutable Person { get; set; }
+        //public PersonNormal Person { get; set; }
     }
 }
