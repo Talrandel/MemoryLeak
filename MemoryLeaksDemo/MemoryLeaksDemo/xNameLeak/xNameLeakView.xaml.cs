@@ -1,13 +1,12 @@
-﻿using System;
-using System.Windows;
+﻿using MemoryLeaksDemo.Infrastructure;
+using System;
 
 namespace MemoryLeaksDemo.xNameLeak
 {
-    /// <summary>
-    /// Interaction logic for xNameLeakView.xaml
-    /// </summary>
     public partial class xNameLeakView
     {
+        private HeavyObject _heavyObject = new HeavyObject();
+
         public xNameLeakView()
         {
             InitializeComponent();
@@ -16,7 +15,8 @@ namespace MemoryLeaksDemo.xNameLeak
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
-            UnregisterName("LeakyButton");
+            if (RepairLeakCheckBox.IsChecked == true)
+                UnregisterName("LeakyButton");
         }
     }
 }

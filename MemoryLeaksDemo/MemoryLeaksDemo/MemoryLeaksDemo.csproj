@@ -80,20 +80,28 @@
       <DependentUpon>CollectionBindingLeakView.xaml</DependentUpon>
     </Compile>
     <Compile Include="CollectionBindingLeak\CollectionBindingLeakViewModel.cs" />
+    <Compile Include="CollectionBindingLeak\SampleItem.cs" />
     <Compile Include="CommandBindingLeak\CommandBindingLeakView.xaml.cs">
       <DependentUpon>CommandBindingLeakView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataBindingLeak\DataBindingLeakView.xaml.cs">
       <DependentUpon>DataBindingLeakView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DispatcherTimerLeak\DispatcherTimerLeakView.xaml.cs">
+      <DependentUpon>DispatcherTimerLeakView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventHandlerLeak\EventHandlerLeakView.xaml.cs">
+      <DependentUpon>EventHandlerLeakView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EventHandlerLeak\StaticSampleObject.cs" />
     <Compile Include="Infrastructure\HeavyObject.cs" />
     <Compile Include="Infrastructure\HeavyViewModel.cs" />
     <Compile Include="Infrastructure\SharedResourceDictionary.cs" />
     <Compile Include="MediaEffectLeak\MediaEffectLeakView.xaml.cs">
       <DependentUpon>MediaEffectLeakView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MergedResourceDictionariesLeak\MergedResourceDictionariesLeakView.xaml.cs">
-      <DependentUpon>MergedResourceDictionariesLeakView.xaml</DependentUpon>
+    <Compile Include="TextBoxUndoLeak\TextBoxUndoLeakView.xaml.cs">
+      <DependentUpon>TextBoxUndoLeakView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
@@ -116,6 +124,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DispatcherTimerLeak\DispatcherTimerLeakView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EventHandlerLeak\EventHandlerLeakView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -131,7 +147,7 @@
     <Compile Include="BindingLeak\PersonLeaky.cs" />
     <Compile Include="BindingLeak\PersonImmutable.cs" />
     <Compile Include="Infrastructure\MyObservableObject.cs" />
-    <Compile Include="Infrastructure\RelayCommand.cs" />
+    <Compile Include="Infrastructure\MyRelayCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -144,11 +160,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MergedResourceDictionariesLeak\MergedResourceDictionariesLeakView.xaml">
+    <Page Include="Styles\DefaultStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Styles\DedaultStyle.xaml">
+    <Page Include="TextBoxUndoLeak\TextBoxUndoLeakView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,15 +201,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="EventHandlerLeak\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

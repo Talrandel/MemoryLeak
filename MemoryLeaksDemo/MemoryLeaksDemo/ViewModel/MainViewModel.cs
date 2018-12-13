@@ -1,10 +1,16 @@
+using System;
+using System.Windows.Input;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using MemoryLeaksDemo.BindingLeak;
 using MemoryLeaksDemo.DataBindingLeak;
-using System;
-using System.Windows.Input;
 using MemoryLeaksDemo.CommandBindingLeak;
+using MemoryLeaksDemo.CollectionBindingLeak;
+using MemoryLeaksDemo.xNameLeak;
+using MemoryLeaksDemo.MediaEffectLeak;
+using MemoryLeaksDemo.EventHandlerLeak;
+using MemoryLeaksDemo.DispatcherTimerLeak;
+using MemoryLeaksDemo.TextBoxUndoLeak;
 
 namespace MemoryLeaksDemo.ViewModel
 {
@@ -21,7 +27,12 @@ namespace MemoryLeaksDemo.ViewModel
             EventHandlerLeakCommand = new RelayCommand(EventHandlerLeak);
             MediaEffectLeakCommand = new RelayCommand(MediaEffectLeak);
             xNameLeakCommand = new RelayCommand(xNameLeak);
+            DispatcherTimerLeakCommand = new RelayCommand(DispatcherTimerLeak);
+            TextBoxUndoLeakCommand = new RelayCommand(TextBoxUndoLeak);
+
             GCCollectCommand = new RelayCommand(GCCollect);
+
+            TotalMemory = GC.GetTotalMemory(true).ToString();
         }
 
         public string TotalMemory
@@ -39,7 +50,8 @@ namespace MemoryLeaksDemo.ViewModel
 
         private void CollectionBindingLeak()
         {
-            // TODO: example!
+            var w1 = new CollectionBindingLeakView();
+            w1.ShowDialog();
             TotalMemory = GC.GetTotalMemory(true).ToString();
         }
 
@@ -52,33 +64,48 @@ namespace MemoryLeaksDemo.ViewModel
 
         private void CommandBindingLeak()
         {
-            var w1 = new CommandBindingLeakView(this);
+            var w1 = new CommandBindingLeakView();
             w1.Show();
             TotalMemory = GC.GetTotalMemory(true).ToString();
         }
 
         private void EventHandlerLeak()
         {
-            // TODO: example!
+            var w1 = new EventHandlerLeakView();
+            w1.ShowDialog();
             TotalMemory = GC.GetTotalMemory(true).ToString();
         }
 
         private void MediaEffectLeak()
         {
-            // TODO: example!
+            var w1 = new MediaEffectLeakView();
+            w1.ShowDialog();
             TotalMemory = GC.GetTotalMemory(true).ToString();
         }
 
         private void xNameLeak()
         {
-            // TODO: example!
+            var w1 = new xNameLeakView();
+            w1.ShowDialog();
+            TotalMemory = GC.GetTotalMemory(true).ToString();
+        }
+
+        private void DispatcherTimerLeak()
+        {
+            var w1 = new DispatcherTimerLeakView();
+            w1.ShowDialog();
+            TotalMemory = GC.GetTotalMemory(true).ToString();
+        }
+
+        private void TextBoxUndoLeak()
+        {
+            var w1 = new TextBoxUndoLeakView();
+            w1.ShowDialog();
             TotalMemory = GC.GetTotalMemory(true).ToString();
         }
 
         private void GCCollect()
         {
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
             GC.Collect();
             TotalMemory = GC.GetTotalMemory(true).ToString();
         }
@@ -96,6 +123,10 @@ namespace MemoryLeaksDemo.ViewModel
         public ICommand MediaEffectLeakCommand { get; }
 
         public ICommand xNameLeakCommand { get; }
+
+        public ICommand DispatcherTimerLeakCommand { get; }
+
+        public ICommand TextBoxUndoLeakCommand { get; }
 
         public ICommand GCCollectCommand { get; }
     }

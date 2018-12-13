@@ -10,22 +10,17 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1"
+        <StackPanel Grid.Row="0"
                     Margin="20"
                     Orientation="Horizontal">
-            <TextBlock Text="Person's name: " />
-            <TextBox Text="{Binding Person.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="Person's name: " VerticalAlignment="Center" />
+            <TextBox Text="{Binding Person.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
             <!--<TextBox Text="{Binding Person.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />-->
             <!--<TextBox Text="{Binding Person.Name, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" />-->
         </StackPanel>
 
-        <Button Grid.Row="2"
-                Margin="20"
-                Content="Close"
-                Click="Button_Click" />
     </Grid>
 </Window>

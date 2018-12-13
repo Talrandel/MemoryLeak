@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MemoryLeaksDemo.Infrastructure;
+using System;
 using System.Windows.Input;
 using System.Windows.Threading;
 
@@ -6,15 +7,16 @@ namespace MemoryLeaksDemo.CommandBindingLeak
 {
     public partial class CommandBindingLeakView
     {
+        private HeavyObject _heavyObject = new HeavyObject();
+
         private RoutedCommand _command;
         private CommandBinding _commandBinding;
         private MainWindow _mainWindow;
 
-        public CommandBindingLeakView(MainWindow mainWindow)
+        public CommandBindingLeakView()
         {
             InitializeComponent();
-            //DataContext = new CollectionBindingLeakViewModel();
-            _mainWindow = mainWindow;
+            _mainWindow = MainWindow.MainWindowInstance;
             _command = new RoutedCommand("ClearBox", GetType());
             _command.InputGestures.Add(new KeyGesture(Key.F5));
             _commandBinding = new CommandBinding(_command, F5CommandExecute);
@@ -25,7 +27,7 @@ namespace MemoryLeaksDemo.CommandBindingLeak
         {
             Dispatcher.BeginInvoke(DispatcherPriority.ContextIdle, (Action)delegate
             {
-                SampleLabel.Content = _mainWindow.SampleTextBox.Text;
+                SampleTextBlock.Text = _mainWindow.SampleTextBox.Text;
             });
         }
 

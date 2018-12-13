@@ -8,6 +8,9 @@ namespace MemoryLeaksDemo
         {
             InitializeComponent();
             DataContext = new MainViewModel();
+            MainWindowInstance = this;
         }
+
+        public static MainWindow MainWindowInstance { get; private set; }
     }
 }

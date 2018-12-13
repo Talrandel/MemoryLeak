@@ -12,12 +12,18 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0"
-               Name="SampleLabel"
-               Content="" />
+        <StackPanel Grid.Row="0"
+                    Margin="20">
+            <TextBlock Text="Press F5 in main window to get value it's textbox and paste it here" />
+            <TextBlock Name="SampleTextBlock"
+                       Text="Sample value" />
+        </StackPanel>
 
-        <CheckBox Grid.Row="1"
-                  Name="RepairLeakCheckBox"
-                  IsChecked="False" />
+        <StackPanel Grid.Row="1"
+                    Margin="20">
+            <TextBlock Text="Check this to repair leak" />
+            <CheckBox Name="RepairLeakCheckBox"
+                      IsChecked="False" />
+        </StackPanel>
     </Grid>
 </Window>

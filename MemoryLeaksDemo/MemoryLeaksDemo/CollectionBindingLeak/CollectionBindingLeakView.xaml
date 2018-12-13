@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="CollectionBindingLeakView" Height="300" Width="300">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <ListBox Grid.Row="0"
+                 ItemsSource="{Binding Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBox Text="{Binding SampleProperty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Margin="5" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
+        <Button Grid.Row="1"
+                Content="Add new item"
+                Command="{Binding AddItemCommand}" />
     </Grid>
 </Window>

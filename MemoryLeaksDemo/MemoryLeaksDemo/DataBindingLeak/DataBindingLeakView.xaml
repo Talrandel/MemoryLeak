@@ -7,21 +7,35 @@
         mc:Ignorable="d"
         Title="DataBindingLeakView" Height="300" Width="300">
     <Grid Name="SampleGrid">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="0"
-                   Name="SampleTextBlock"
-                   Text="{Binding ElementName=SampleGrid, Path=Children.Count}" />
-        
-        <CheckBox Grid.Column="1"
-                  Name="RepairLeakCheckBox"
-                  IsChecked="False" />
-        
+        <TextBlock Grid.Row="0"
+                   Text="Some textblock " />
+        <TextBlock Grid.Row="1"
+                   Text="Another control" />
+        <TextBlock Grid.Row="2"
+                   Text="Third child: " />
+
+        <StackPanel Grid.Row="3"
+                    Margin="20">
+            <TextBlock Text="Count of children of main grid here: " />
+            <TextBlock Name="SampleTextBlock"
+                       Text="{Binding ElementName=SampleGrid, Path=Children.Count}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="4"
+                    Margin="20">
+            <TextBlock Text="Check this to repair leak" />
+            <CheckBox Name="RepairLeakCheckBox"
+                      IsChecked="False" />
+        </StackPanel>
+
     </Grid>
 </Window>

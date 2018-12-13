@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MemoryLeaksDemo"
         mc:Ignorable="d"
+        SizeToContent="Height"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="{x:Type Button}">
+                <Setter Property="Margin" Value="10, 5, 10, 5" />
+            </Style>
+        </Grid.Resources>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
@@ -19,43 +26,53 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Grid.Resources>
-            <Style TargetType="Button">
-                <Setter Property="Margin" Value="5" />
-            </Style>
-        </Grid.Resources>
 
         <Button Grid.Row="1"
                 Content="Binding leak"
                 Command="{Binding BindingLeakCommand}" />
         <Button Grid.Row="2"
-                Content="Leak №2"
-                Command="{Binding BindingLeakCommand}" />
+                Content="Collection binding leak"
+                Command="{Binding CollectionBindingLeakCommand}" />
         <Button Grid.Row="3"
-                Content="Leak №3" />
+                Content="Command binding leak" 
+                Command="{Binding CommandBindingLeakCommand}" />
         <Button Grid.Row="4"
-                Content="Leak №4" />
+                Content="Data binding leak" 
+                Command="{Binding DataBindingLeakCommand}" />
         <Button Grid.Row="5"
-                Content="Leak №5" />
+                Content="Event handler leak" 
+                Command="{Binding EventHandlerLeakCommand}" />
         <Button Grid.Row="6"
-                Content="Leak №6" />
+                Content="Media effect leak" 
+                Command="{Binding MediaEffectLeakCommand}" />
         <Button Grid.Row="7"
-                Content="Leak №7" />
+                Content="x:Name leak" 
+                Command="{Binding xNameLeakCommand}" />
+        <Button Grid.Row="8"
+                Content="Dispatcher timer leak" 
+                Command="{Binding DispatcherTimerLeakCommand}" />
+        <Button Grid.Row="9"
+                Content="TextBox undo leak" 
+                Command="{Binding TextBoxUndoLeakCommand}" />
 
-        <StackPanel Grid.Row="8"
-                    Margin="20"
-                    Orientation="Horizontal">
-            <TextBlock Text="Total memory consumed: "/>
-            <TextBlock Text="{Binding TotalMemory}" />
-        </StackPanel>
-        
-        <TextBox Grid.Row="9"
+        <TextBox Grid.Row="10"
+                 Margin="10, 5, 10, 5"
                  Name="SampleTextBox"
                  Text="SampleText" />
 
-        <Button Grid.Row="10" 
+        <StackPanel Grid.Row="11"
+                    Margin="10, 5, 10, 5"
+                    Orientation="Horizontal">
+            <TextBlock Text="Total memory consumed (in bytes): "
+                       Margin="5" />
+            <TextBlock Text="{Binding TotalMemory}"
+                       Margin="5" />
+        </StackPanel>
+
+        <Button Grid.Row="12" 
                 Content="Force GC"
                 Command="{Binding GCCollectCommand}" />
     </Grid>

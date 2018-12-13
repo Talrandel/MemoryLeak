@@ -1,23 +1,30 @@
-﻿<Window x:Class="MemoryLeaksDemo.xNameLeak.xNameLeakView"
+﻿<Window x:Class="MemoryLeaksDemo.EventHandlerLeak.EventHandlerLeakView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MemoryLeaksDemo.xNameLeak"
+        xmlns:local="clr-namespace:MemoryLeaksDemo.EventHandlerLeak"
         mc:Ignorable="d"
-        Title="xNameLeakView" Height="300" Width="300">
+        Title="EventHandlerLeakView" Height="300" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
-        <Button Grid.Row="0"
-                x:Name="LeakyButton" 
-                Margin="20"
-                Content="Very leaky button" />
 
-        <StackPanel Grid.Row="1"
+        <StackPanel Grid.Row="0"
+                    Margin="20">
+            <TextBlock Text="Leaky handler to textchanged event " />
+            <TextBox Name="SampleTextBox"
+                     Text="Sample text" />
+        </StackPanel>
+
+
+        <TextBlock Grid.Row="1"
+                   Name="TextChangedHandlerTextBlock" />
+
+        <StackPanel Grid.Row="2"
                     Margin="20">
             <TextBlock Text="Check this to repair leak" />
             <CheckBox Name="RepairLeakCheckBox"

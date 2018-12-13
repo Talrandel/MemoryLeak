@@ -5,6 +5,7 @@
         public CollectionBindingLeakView()
         {
             InitializeComponent();
+            DataContext = new CollectionBindingLeakViewModel();
         }
     }
 }

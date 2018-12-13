@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using MemoryLeaksDemo.Infrastructure;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -6,6 +7,8 @@ namespace MemoryLeaksDemo.MediaEffectLeak
 {
     public partial class MediaEffectLeakView
     {
+        private HeavyObject _heavyObject = new HeavyObject();
+
         public MediaEffectLeakView()
         {
             InitializeComponent();
