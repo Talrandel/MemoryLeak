@@ -8,24 +8,24 @@ namespace MemoryLeaksDemo.CollectionBindingLeak
 {
     class CollectionBindingLeakViewModel : HeavyViewModel
     {
-        //private List<SampleItem> _items;        
-        //public List<SampleItem> Items
-        //{
-        //    get { return _items; }
-        //    set { Set(ref _items, value); }
-        //}
-
-        private ObservableCollection<SampleItem> _items;
-        public ObservableCollection<SampleItem> Items
+        private List<SampleItem> _items;
+        public List<SampleItem> Items
         {
             get { return _items; }
             set { Set(ref _items, value); }
         }
 
+        //private ObservableCollection<SampleItem> _items;
+        //public ObservableCollection<SampleItem> Items
+        //{
+        //    get { return _items; }
+        //    set { Set(ref _items, value); }
+        //}
+
         public CollectionBindingLeakViewModel()
         {
-            //Items = new List<SampleItem>()
-            Items = new ObservableCollection<SampleItem>()
+            Items = new List<SampleItem>()
+            //Items = new ObservableCollection<SampleItem>()
             {
                 new SampleItem { SampleProperty = "One" },
                 new SampleItem { SampleProperty = "Two" },

@@ -17,9 +17,9 @@
                     Margin="20"
                     Orientation="Horizontal">
             <TextBlock Text="Person's name: " VerticalAlignment="Center" />
-            <TextBox Text="{Binding Person.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
-            <!--<TextBox Text="{Binding Person.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />-->
-            <!--<TextBox Text="{Binding Person.Name, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" />-->
+            <!--<TextBox Text="{Binding Person.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />-->
+            <!--<TextBox Text="{Binding Person.Name, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />-->
+            <TextBox Text="{Binding Person.Name, Mode=OneTime, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" />
         </StackPanel>
 
     </Grid>

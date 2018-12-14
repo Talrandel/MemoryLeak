@@ -105,6 +105,8 @@
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="WeakEventManagerExample\EventSourceSample.cs" />
+    <Compile Include="WeakEventManagerExample\SomeEventWeakEventManager.cs" />
     <Compile Include="xNameLeak\xNameLeakView.xaml.cs">
       <DependentUpon>xNameLeakView.xaml</DependentUpon>
     </Compile>

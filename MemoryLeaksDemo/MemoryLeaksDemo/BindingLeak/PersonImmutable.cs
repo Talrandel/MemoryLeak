@@ -1,6 +1,8 @@
-﻿namespace MemoryLeaksDemo.BindingLeak
+﻿using MemoryLeaksDemo.Infrastructure;
+
+namespace MemoryLeaksDemo.BindingLeak
 {
-    class PersonImmutable
+    class PersonImmutable : HeavyObject
     {
         public PersonImmutable(string name)
         {

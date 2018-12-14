@@ -6,13 +6,13 @@ namespace MemoryLeaksDemo.BindingLeak
     {
         public BindingLeakViewModel()
         {
-            Person = new PersonLeaky();
-            //Person = new PersonImmutable();
+            //Person = new PersonLeaky();
+            Person = new PersonImmutable("John Doe");
             //Person = new PersonNormal();
         }      
 
-        public PersonLeaky Person { get; set; }
-        //public PersonImmutable Person { get; set; }
+        //public PersonLeaky Person { get; set; }
+        public PersonImmutable Person { get; set; }
         //public PersonNormal Person { get; set; }
     }
 }
