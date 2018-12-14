@@ -76,6 +76,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BindingLeak\PersonNormal.cs" />
+    <Compile Include="BindingLeak\PersonStatic.cs" />
     <Compile Include="CollectionBindingLeak\CollectionBindingLeakView.xaml.cs">
       <DependentUpon>CollectionBindingLeakView.xaml</DependentUpon>
     </Compile>
@@ -96,6 +97,7 @@
     <Compile Include="EventHandlerLeak\StaticSampleObject.cs" />
     <Compile Include="Infrastructure\HeavyObject.cs" />
     <Compile Include="Infrastructure\HeavyViewModel.cs" />
+    <Compile Include="Infrastructure\MyCheckBox.cs" />
     <Compile Include="Infrastructure\SharedResourceDictionary.cs" />
     <Compile Include="MediaEffectLeak\MediaEffectLeakView.xaml.cs">
       <DependentUpon>MediaEffectLeakView.xaml</DependentUpon>
@@ -104,7 +106,6 @@
       <DependentUpon>TextBoxUndoLeakView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="WeakEventManagerExample\EventSourceSample.cs" />
     <Compile Include="WeakEventManagerExample\SomeEventWeakEventManager.cs" />
     <Compile Include="xNameLeak\xNameLeakView.xaml.cs">

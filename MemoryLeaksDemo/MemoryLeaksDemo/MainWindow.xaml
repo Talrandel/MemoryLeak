@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:MemoryLeaksDemo"
         mc:Ignorable="d"
         SizeToContent="Height"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Memory leaks"
+        Height="350" Width="525">
     <Grid>
         <Grid.Resources>
             <Style TargetType="{x:Type Button}">
@@ -61,7 +62,7 @@
         <TextBox Grid.Row="10"
                  Margin="10, 5, 10, 5"
                  Name="SampleTextBox"
-                 Text="SampleText" />
+                 Text="Sample text for command binding leak" />
 
         <StackPanel Grid.Row="11"
                     Margin="10, 5, 10, 5"

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MemoryLeaksDemo.xNameLeak"
         mc:Ignorable="d"
         Title="xNameLeakView" Height="300" Width="300">
-    <Grid>
+    <Grid x:Name="LeakyGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
@@ -18,8 +18,10 @@
                 Content="Very leaky button" />
 
         <StackPanel Grid.Row="1"
+                    x:Name="LeakyStackPanel"
                     Margin="20">
-            <TextBlock Text="Check this to repair leak" />
+            <TextBlock x:Name="LeakyTextBlock"
+                       Text="Check this to repair leak" />
             <CheckBox Name="RepairLeakCheckBox"
                       IsChecked="False" />
         </StackPanel>

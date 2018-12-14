@@ -1,10 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options" 
-                    xmlns:local="clr-namespace:MemoryLeaksDemo.MediaEffectLeak">
+                    xmlns:local="clr-namespace:MemoryLeaksDemo.MediaEffectLeak"
+                    xmlns:infrastructure="clr-namespace:MemoryLeaksDemo.Infrastructure">
     <!--<DropShadowEffect x:Key="DefaultShadow" po:Freeze="True"/>-->
     <DropShadowEffect x:Key="DefaultShadow"/>
-    <Style TargetType="{x:Type CheckBox}" x:Key="MediaEffectCheckBoxStyle">
+    <Style TargetType="{x:Type infrastructure:MyCheckBox}" >
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
         <Setter Property="Background" Value="White" />

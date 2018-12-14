@@ -6,23 +6,24 @@
         xmlns:local="clr-namespace:MemoryLeaksDemo.MediaEffectLeak"
         mc:Ignorable="d"
         Loaded="MediaEffectLeakView_OnLoaded"
-        Title="MediaEffectLeakView" Height="300" Width="300">
+        xmlns:infrastructure="clr-namespace:MemoryLeaksDemo.Infrastructure"
+        Title="MediaEffectLeakView" 
+        Height="300" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Row="0"
-                    Orientation="Vertical">
-            <CheckBox Name="CheckBox1"
-                      Style="{StaticResource MediaEffectCheckBoxStyle}"
-                      Margin="8" 
-                      Padding="4" 
-                      Content="Click Me!" />
-            
-            <TextBlock Name="TextBlock1"
-                       HorizontalAlignment="Center" />
-        </StackPanel>
+
+
+        <infrastructure:MyCheckBox Grid.Row="0"
+                                   x:Name="CheckBox1"
+                                   Margin="8" 
+                                   Padding="4" 
+                                   Content="Click Me!" />
+
+        <TextBlock Grid.Row="1"
+                   Name="TextBlock1"
+                   HorizontalAlignment="Center" />
     </Grid>
 </Window>

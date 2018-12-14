@@ -7,14 +7,12 @@
              xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
              StartupUri="MainWindow.xaml" 
              d1p1:Ignorable="d" >
-  <Application.Resources>
-    <ResourceDictionary>
-      <vm:ViewModelLocator x:Key="Locator" 
-                           d:IsDataSource="True" 
-                           xmlns:vm="clr-namespace:MemoryLeaksDemo.ViewModel" />
-        <ResourceDictionary.MergedDictionaries>
-            <infrastructure:SharedResourceDictionary Source="MediaEffectLeak/MediaEffectResourceDictionary.xaml" />
-        </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-  </Application.Resources>
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<infrastructure:SharedResourceDictionary Source="MediaEffectLeak/MediaEffectResourceDictionary.xaml" />-->
+                <ResourceDictionary Source="MediaEffectLeak/MediaEffectResourceDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

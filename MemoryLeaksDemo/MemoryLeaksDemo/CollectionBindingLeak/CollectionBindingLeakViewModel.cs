@@ -1,12 +1,12 @@
-﻿using GalaSoft.MvvmLight.Command;
-using MemoryLeaksDemo.Infrastructure;
+﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace MemoryLeaksDemo.CollectionBindingLeak
 {
-    class CollectionBindingLeakViewModel : HeavyViewModel
+    class CollectionBindingLeakViewModel : ViewModelBase
     {
         private List<SampleItem> _items;
         public List<SampleItem> Items

@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemoryLeaksDemo", "MemoryLeaksDemo\MemoryLeaksDemo.csproj", "{A96F9493-BC38-4BD6-B138-9BCA348FE84B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShowEffectsBug", "..\MediaEffectBug\ShowEffectsBug.csproj", "{58F24532-E285-4B3E-B7BC-24456D42C4EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A96F9493-BC38-4BD6-B138-9BCA348FE84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A96F9493-BC38-4BD6-B138-9BCA348FE84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A96F9493-BC38-4BD6-B138-9BCA348FE84B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58F24532-E285-4B3E-B7BC-24456D42C4EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58F24532-E285-4B3E-B7BC-24456D42C4EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58F24532-E285-4B3E-B7BC-24456D42C4EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58F24532-E285-4B3E-B7BC-24456D42C4EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

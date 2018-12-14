@@ -22,6 +22,7 @@
 
 
         <TextBlock Grid.Row="1"
+                   Margin="20"
                    Name="TextChangedHandlerTextBlock" />
 
         <StackPanel Grid.Row="2"
