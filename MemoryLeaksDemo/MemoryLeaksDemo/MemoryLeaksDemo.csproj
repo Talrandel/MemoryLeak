@@ -95,9 +95,11 @@
       <DependentUpon>EventHandlerLeakView.xaml</DependentUpon>
     </Compile>
     <Compile Include="EventHandlerLeak\StaticSampleObject.cs" />
+    <Compile Include="Infrastructure\BindingDecoratorBase.cs" />
     <Compile Include="Infrastructure\HeavyObject.cs" />
     <Compile Include="Infrastructure\HeavyViewModel.cs" />
     <Compile Include="Infrastructure\MyCheckBox.cs" />
+    <Compile Include="Infrastructure\OneTimeBinding.cs" />
     <Compile Include="Infrastructure\SharedResourceDictionary.cs" />
     <Compile Include="MediaEffectLeak\MediaEffectLeakView.xaml.cs">
       <DependentUpon>MediaEffectLeakView.xaml</DependentUpon>
